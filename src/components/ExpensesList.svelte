@@ -1,5 +1,5 @@
 <script>
-  import SectionTitle from "./Title.svelte";
+  import Title from "./Title.svelte";
   import Expense from "./Expense.svelte";
   import { getContext } from "svelte";
 
@@ -11,7 +11,7 @@
 </script>
 
 <section class="container">
-  <SectionTitle title="Liste des dépenses" />
+  <Title title="Liste des dépenses" />
 
   <ul>
     {#each expenses as expense}

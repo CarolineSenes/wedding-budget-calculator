@@ -1,10 +1,13 @@
 ## PLAN
 Navbar
-Title
-Expense + ExpensesList
+Title -> props
+Expense -> getContext + {#if}
+ExpensesList -> getContext + {#each}
 Expense : features toogle, remove
 ExpensesList : feature display + btn remove all expenses
-
+Totals
+App -> reactivity ($:)
+Modal ExpenseForm -> v:bind, reactivity, {#if}, submission
 
 ---
 
