@@ -7,7 +7,8 @@ Expense : features toogle, remove
 ExpensesList : feature display + btn remove all expenses
 Totals
 App -> reactivity ($:)
-Modal ExpenseForm -> v:bind, reactivity, {#if}, submission
+Modal ExpenseForm -> v:bind, reactivity, {#if}, submission, add new expense, edit expense
+
 
 ---
 

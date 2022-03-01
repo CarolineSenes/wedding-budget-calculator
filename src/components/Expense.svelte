@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  
   //on exporte pour pouvoir modifier la valeur de chaque "expense" de l'extérieur du component (depuis ExpensesList)
   export let expense;
 
@@ -9,7 +10,8 @@
     displayAmount = !displayAmount;
   }
 
-  const removeExpense = getContext('remove')
+  const removeExpense = getContext('remove');
+  const modifiedExpense = getContext('modify');
 </script>
 
 <article class="card p-3 m-3">
@@ -21,7 +23,7 @@
       >
     </div>
     <div>
-      <button><i class="bi bi-pencil-fill text-success mx-2" /></button>
+      <button on:click={() => modifiedExpense(expense.id)}><i class="bi bi-pencil-fill text-success mx-2" /></button>
       <button on:click={() => removeExpense(expense.id)}
         ><i class="bi bi-trash3-fill text-danger" /></button
       >

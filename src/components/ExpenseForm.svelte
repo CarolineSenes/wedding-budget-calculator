@@ -1,10 +1,11 @@
 <script>
   import Title from "./Title.svelte";
-  let name = "";
-  let amount = null;
 
   //on exporte pour pouvoir modifier de l'extérieur du component (depuis App)
   export let addExpense;
+  export let isEditing;
+  export let name = "";
+  export let amount = null;
 
   //isEmpty est true si name ou amount est false (ex: name=true, !name=false)
   //on utilise une variable réactive puisque sa valeur dépend d'autres variables (name et amount)
@@ -45,9 +46,13 @@
       {#if isEmpty}
         <p class="form-text text-danger">Merci de compléter tous les champs.</p>
       {/if}
-      <button type="submit" class="btn btn-primary" disabled={isEmpty}
-        >Ajouter la dépense</button
-      >
+      <button type="submit" class="btn btn-primary" disabled={isEmpty}>
+        {#if isEditing}
+        Editer la dépense
+        {:else}
+        Ajouter la dépense
+        {/if}
+        </button>
     </div>
   </form>
 </section>
