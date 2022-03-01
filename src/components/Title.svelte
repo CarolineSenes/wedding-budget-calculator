@@ -1,7 +1,7 @@
 <script>
-    //on exporte pour pouvoir modifier le titre de l'extérieur du component
+    //on exporte pour pouvoir modifier le titre de l'extérieur du component (depuis ExpensesList)
     //le titre par défaut sera "Dépense anonyme"
-    export let title = "Dépense anonyme"
+    export let title = "Anonyme"
 </script>
 
 <style>
