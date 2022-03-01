@@ -13,7 +13,7 @@
 </script>
 
 <article class="card p-3 m-3">
-  <div class="d-flex ">
+  <div class="d-flex">
     <div class="me-auto">
       <h3 class="d-inline">{expense.name}</h3>
       <button class="mx-2" on:click={toogleAmount}
