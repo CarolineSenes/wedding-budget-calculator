@@ -4,6 +4,7 @@
   //on exporte pour pouvoir modifier de l'extérieur du component (depuis App)
   export let addExpense;
   export let isEditing;
+  export let editExpense;
   export let name = "";
   export let amount = null;
 
@@ -12,7 +13,11 @@
   $: isEmpty = !name || !amount;
 
   function handelSubmit() {
-    addExpense({ name, amount });
+    if (isEditing) {
+      editExpense({ name, amount });
+    } else {
+      addExpense({ name, amount });
+    }
     name = "";
     amount = null;
   }
@@ -48,11 +53,11 @@
       {/if}
       <button type="submit" class="btn btn-primary" disabled={isEmpty}>
         {#if isEditing}
-        Editer la dépense
+          Editer la dépense
         {:else}
-        Ajouter la dépense
+          Ajouter la dépense
         {/if}
-        </button>
+      </button>
     </div>
   </form>
 </section>

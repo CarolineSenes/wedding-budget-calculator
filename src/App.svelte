@@ -60,6 +60,19 @@
     setAmount = expense.amount;
   }
 
+  //créé un nouveau array "expenses" et itère sur chaque item pour trouver celui
+  //dont l'id correspond à setId. S'il correspond il retourne l'item, sinon il fait pareil ^^.
+  //Puis supprime toutes ses valeurs.
+  function editExpense({name, amount}){
+    expenses = expenses.map(item=>{
+      return item.id === setId ? {...item, name, amount} : {...item};
+    })
+    setId = null;
+    setName = '';
+    setAmount = null;
+
+  }
+
   //CONTEXT//
   setContext("remove", removeExpense);
   setContext("clearExpenses", clearExpenses);
@@ -68,7 +81,7 @@
 
 <Navbar />
 <main class="container">
-  <ExpenseForm {addExpense} name={setName} amount={setAmount} {isEditing}/>
+  <ExpenseForm {addExpense} name={setName} amount={setAmount} {isEditing} {editExpense}/>
   <Totals {total} />
   <ExpensesList {expenses} />
 </main>
