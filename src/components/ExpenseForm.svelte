@@ -5,6 +5,7 @@
   export let addExpense;
   export let isEditing;
   export let editExpense;
+  export let hideForm;
   export let name = "";
   export let amount = null;
 
@@ -31,6 +32,7 @@
       class="btn-close"
       data-bs-dismiss="modal"
       aria-label="Close"
+      on:click={hideForm}
     />
   </div>
   <form class="modal-body" on:submit|preventDefault={handelSubmit}>

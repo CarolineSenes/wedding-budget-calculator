@@ -8,8 +8,8 @@ ExpensesList : feature display + btn remove all expenses
 Totals
 App -> reactivity ($:)
 Modal ExpenseForm -> v:bind, reactivity, {#if}, submission, add new expense, edit expense (récup des valeurs)
-Modal ExpenseForm : change function btn when submit an edited expense
-
+Modal ExpenseForm : change function btn when submit an edited expense, submit with the edited values
+Show/Hide ExpenseForm
 
 ---
 

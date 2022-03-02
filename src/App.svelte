@@ -19,6 +19,10 @@
   let setAmount = null;
   let setId = null;
 
+  //TOOGLE FORM VARIABLES//
+  //état de départ de ExpenseForm
+  let isFormOpen = false;
+
   //REACTIVE//
   //Variable qui dépend d'autres variables
 
@@ -31,6 +35,20 @@
   $: isEditing = setId ? true : false;
 
   //FUNCTIONS//
+  //affiche ExpenseForm
+  function showForm() {
+    isFormOpen = true;
+  }
+
+  //cache ExpenseForm et réinitialise les éventuelles valeurs saisies pour qu'elles ne se réaffiche pas 
+  //à la prochaine ouverture de ExpenseForm
+  function hideForm() {
+    isFormOpen = false;
+    setName = "";
+    setAmount = null;
+    setId = null;
+  }
+
   //retourne un nouvel array "expenses" avec tous les items, sauf celui qu'on veut supprimer et qu'on passe en parametres.
   function removeExpense(id) {
     expenses = expenses.filter((item) => item.id !== id);
@@ -51,26 +69,26 @@
     expenses = [expense, ...expenses];
   }
 
-  //cherche le dépense correspondante à l'id entrée en paramètre
+  //cherche la dépense correspondante à l'id entré en paramètre
   //et attribue les valeurs aux variables déclarées dans la partie SET EDITING VARIABLES
   function setModifiedExpense(id) {
     let expense = expenses.find((item) => item.id === id);
     setId = expense.id;
     setName = expense.name;
     setAmount = expense.amount;
+    showForm();
   }
 
   //créé un nouveau array "expenses" et itère sur chaque item pour trouver celui
   //dont l'id correspond à setId. S'il correspond il retourne l'item, sinon il fait pareil ^^.
   //Puis supprime toutes ses valeurs.
-  function editExpense({name, amount}){
-    expenses = expenses.map(item=>{
-      return item.id === setId ? {...item, name, amount} : {...item};
-    })
+  function editExpense({ name, amount }) {
+    expenses = expenses.map((item) => {
+      return item.id === setId ? { ...item, name, amount } : { ...item };
+    });
     setId = null;
-    setName = '';
+    setName = "";
     setAmount = null;
-
   }
 
   //CONTEXT//
@@ -79,9 +97,18 @@
   setContext("modify", setModifiedExpense);
 </script>
 
-<Navbar />
+<Navbar {showForm} />
 <main class="container">
-  <ExpenseForm {addExpense} name={setName} amount={setAmount} {isEditing} {editExpense}/>
+  {#if isFormOpen}
+    <ExpenseForm
+      {addExpense}
+      name={setName}
+      amount={setAmount}
+      {isEditing}
+      {editExpense}
+      {hideForm}
+    />
+  {/if}
   <Totals {total} />
   <ExpensesList {expenses} />
 </main>
