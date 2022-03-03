@@ -1,18 +1,20 @@
 <script>
   import { setContext } from "svelte";
+  import { onMount, afterUpdate } from 'svelte';
 
   //COMPONENTS//
   import Navbar from "./components/Navbar.svelte";
   import ExpensesList from "./components/ExpensesList.svelte";
   import Totals from "./components/Totals.svelte";
   import ExpenseForm from "./components/ExpenseForm.svelte";
+  import ModalContent from "./components/ModalContent.svelte";
 
   //DATA//
-  import expensesData from "./expenses";
+  //import expensesData from "./expenses";
 
   //VARIABLES//
   //on récupère tout le contenu de expenses.js dans un array "expenses"
-  let expenses = [...expensesData];
+  let expenses = [];
 
   //SET EDITING VARIABLES (for edit expense)//
   let setName = "";
@@ -95,6 +97,28 @@
   setContext("remove", removeExpense);
   setContext("clearExpenses", clearExpenses);
   setContext("modify", setModifiedExpense);
+
+  //LOCALSTORAGE
+  //envoie le contenu de l'array 'expenses' dans le local storage après les avoir convertis en string.
+  //La clé des données sera 'expenses'.
+  function setLocalStorage(){
+    localStorage.setItem('expenses', JSON.stringify(expenses))
+  }
+
+  //au montage du component, si il y a qlqch dans le localstorage, on transfert les données l'array "expenses" après les avoir 
+  //convertit en JSON, sinon on retourne un array vide
+  //cela permet de récupérer à l'écran les dépenses contenues dans le local storage
+  onMount(() => {
+		expenses = localStorage.getItem('expenses')
+    ? JSON.parse(localStorage.getItem('expenses'))
+    : []
+	});
+
+  //setlocalstorage est lancer pendant l'afterupdate. Ca évite d'écrire la function dans removeExpense, clearExpenses, addExpense,
+  // et editExpense
+  afterUpdate(()=>{
+    setLocalStorage();
+  })
 </script>
 
 <Navbar {showForm} />
@@ -112,6 +136,9 @@
   <Totals {total} />
   <ExpensesList {expenses} />
 </main>
+<Modal>
+	<ModalContent />
+</Modal>
 
 <style>
 </style>
