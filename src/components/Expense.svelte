@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import { fade, blur, slide, scale, fly } from 'svelte/transition';
   
   //on exporte pour pouvoir modifier la valeur de chaque "expense" de l'extérieur du component (depuis ExpensesList)
   export let expense;
@@ -31,7 +32,7 @@
   </div>
 
   {#if displayAmount}
-    <div class="card-body">
+    <div class="card-body" transition:slide>
       {expense.amount}€
     </div>
   {/if}

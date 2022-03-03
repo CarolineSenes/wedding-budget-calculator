@@ -7,7 +7,6 @@
   import ExpensesList from "./components/ExpensesList.svelte";
   import Totals from "./components/Totals.svelte";
   import ExpenseForm from "./components/ExpenseForm.svelte";
-  import ModalContent from "./components/ModalContent.svelte";
 
   //DATA//
   //import expensesData from "./expenses";
@@ -136,9 +135,7 @@
   <Totals {total} />
   <ExpensesList {expenses} />
 </main>
-<Modal>
-	<ModalContent />
-</Modal>
+
 
 <style>
 </style>

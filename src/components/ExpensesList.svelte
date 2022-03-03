@@ -2,6 +2,8 @@
   import Title from "./Title.svelte";
   import Expense from "./Expense.svelte";
   import { getContext } from "svelte";
+  import { fly } from "svelte/transition";
+  import { flip } from 'svelte/animate';
 
   //on exporte pour pouvoir modifier l'array "expenses" de l'extérieur du component (depuis App)
   //la valeur par défaut sera un array vide
@@ -14,8 +16,10 @@
   <Title title="Liste des dépenses" />
 
   <ul>
-    {#each expenses as expense}
-      <Expense {expense} />
+    {#each expenses as expense, index (expense.id)}
+      <div in:fly={{x:200, delay:index*150}} out:fly={{x:-200}} animate:flip>
+        <Expense {expense} />
+      </div>
     {:else}
       <p>La liste des dépenses est actuellement vide</p>
     {/each}
