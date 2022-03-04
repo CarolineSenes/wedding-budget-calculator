@@ -16,14 +16,14 @@
 </script>
 
 <article class="card p-3 my-3">
-  <div class="d-flex">
-    <div class="me-auto">
-      <h3 class="d-inline">{expense.name}</h3>
+  <div class="d-flex flex-nowrap">
+    <div class="flex-grow-1">
+      <p class="d-inline h5">{expense.name}</p>
       <button class="btn-expense" on:click={toogleAmount}
         ><i class="bi bi-caret-down-fill" /></button
       >
     </div>
-    <div>
+    <div class="expense--buttons">
       <button class="btn-expense text-center" on:click={() => modifiedExpense(expense.id)}
         ><i class="bi bi-pencil-fill" /></button
       >

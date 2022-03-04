@@ -38,6 +38,6 @@
     background-color: var(--secondary-color);
   }
   p{
-    color: var(--white);
+    color: var(--primary-color);
   }
 </style>

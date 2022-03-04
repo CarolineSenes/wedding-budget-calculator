@@ -3,7 +3,7 @@
 </script>
 
 <nav class="container-fluid flex-column flex-sm-row navbar mb-5">
-  <h1>Budget Mariage</h1>
+  <h1 class="display-1 py-3">Budget Mariage</h1>
   <form class="d-flex">
     <button
       class="btn btn-outline me-2 d-flex align-items-center"
@@ -16,7 +16,3 @@
   </form>
 </nav>
 
-<style>
-  .btn {
-  }
-</style>

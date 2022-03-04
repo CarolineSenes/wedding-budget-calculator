@@ -38,15 +38,19 @@
   </div>
   <form class="modal-body" on:submit|preventDefault={handelSubmit}>
     <div>
+      <p class="form-text">Les champs suivis d'un astérisques (*) sont requis</p>
       <label for="name" class="form-label">Nom</label>
-      <input class="form-control" type="text" id="name" bind:value={name} />
+      <span>*</span>
+      <input class="form-control" type="text" id="name" placeholder="Traiteur" bind:value={name} />
     </div>
     <div>
       <label for="amount" class="form-label">Montant</label>
+      <span>*</span>
       <input
         class="form-control"
         type="number"
         id="amount"
+        placeholder="5000"
         bind:value={amount}
       />
     </div>
