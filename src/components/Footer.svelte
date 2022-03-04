@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-3 fixed-bottom">
+<footer class="footer mt-auto py-3">
   <div class="container text-center">
     <p>
       Développé avec Svelte par <a href="mailto:senes.caroline@orange.fr"
@@ -8,3 +8,4 @@
     </p>
   </div>
 </footer>
+
