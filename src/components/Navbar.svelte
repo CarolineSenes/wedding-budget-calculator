@@ -17,14 +17,6 @@
 </nav>
 
 <style>
-  .navbar,
   .btn {
-    color: var(--primary-color);
-  }
-  .btn {
-    border: 1px solid var(--primary-color);
-  }
-  .btn:hover {
-    color: var(--secondary-color);
   }
 </style>

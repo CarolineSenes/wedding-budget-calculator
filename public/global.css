@@ -1,7 +1,7 @@
 :root{
-  --primary-color: #1B5B5A;
-  --secondary-color: #FCB6B9;
-  --tertiary-color: #023638;
+  --primary-color: #023638;
+  --secondary-color: #BE93C5;
+  --tertiary-color: red;
   --white: #F9F9F9;
 }
 
@@ -10,8 +10,14 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgb(27,91,90);
-  background: linear-gradient(0deg, rgba(27,91,90,1) 10%, rgba(252,182,185,1) 100%);}
+  color: var(--primary-color);
+  background: #FFB75E;  /* fallback for old browsers */
+  background: #e96443;  /* fallback for old browsers */
+  background: #BE93C5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+}
 
 section {
   margin-bottom: 2em;
@@ -22,12 +28,17 @@ section {
   font-size: 1.25em;
 }
 
+button{
+  all: unset;
+  cursor: pointer;
+}
+
 .btn {
   font-weight: 700;
-  border: 1px solid var(--secondary-color);
-  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
+
 .btn:hover{
-  background-color: var(--tertiary-color)
+  background-color: var(--white)
 }
 

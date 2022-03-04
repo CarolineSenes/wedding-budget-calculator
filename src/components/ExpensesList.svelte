@@ -35,11 +35,7 @@
 
 <style>
   .expensesList{
-    background-color: var(--primary-color);
-  }
-  .btn{
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
   }
   p{
     color: var(--white);

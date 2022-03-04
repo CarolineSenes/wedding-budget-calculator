@@ -67,20 +67,17 @@
 
 <style>
   section {
-    background-color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--white);
   }
   label{
     font-weight: 700;
-    color: var(--secondary-color);
   }
   .form-text{
-    color: var(--white);
+    color: var(--primary-color);
   }
   .btn-close{
     padding: 1em;
-    background-color: var(--secondary-color);
-  }
-  .btn:hover{
-    color: var(--secondary-color);
+    border: 2px solid var(--white);
   }
 </style>

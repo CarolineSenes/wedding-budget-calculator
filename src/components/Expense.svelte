@@ -19,15 +19,15 @@
   <div class="d-flex">
     <div class="me-auto">
       <h3 class="d-inline">{expense.name}</h3>
-      <button class="mx-2" on:click={toogleAmount}
+      <button class="btn-expense" on:click={toogleAmount}
         ><i class="bi bi-caret-down-fill" /></button
       >
     </div>
     <div>
-      <button class="btn-edit text-center" on:click={() => modifiedExpense(expense.id)}
+      <button class="btn-expense text-center" on:click={() => modifiedExpense(expense.id)}
         ><i class="bi bi-pencil-fill" /></button
       >
-      <button class="btn-delete text-center" on:click={() => removeExpense(expense.id)}
+      <button class="btn-expense text-center" on:click={() => removeExpense(expense.id)}
         ><i class="bi bi-trash3-fill" /></button
       >
     </div>
@@ -44,17 +44,14 @@
   article{
     background-color: var(--white);
   }
-  button {
-    all: unset;
-    cursor: pointer;
-  }
-  .btn-edit, .bi-arrow-right-circle-fill{
+  .bi-arrow-right-circle-fill{
     margin-right: 1em;
   }
-  .btn-delete, .btn-edit{
+  .btn-expense{
     transition: all .2s ease-in-out;
+    margin-left: 1em;
   }
-  .btn-delete:hover, .btn-edit:hover{
+  .btn-expense:hover{
     transform: scale(1.2);
   }
 </style>
