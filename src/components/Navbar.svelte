@@ -1,19 +1,30 @@
 <script>
-    export let showForm;
+  export let showForm;
 </script>
 
-<style>
-    /* your styles go here */
-</style>
-
-<nav class="navbar navbar-light bg-light mb-5">
-    <div class="container-fluid">
-      <h1>Budget Calculator</h1>
-      <form class="d-flex">
-        <button class="btn btn-outline-dark me-2" type="button" on:click={showForm}>
-          <i class="bi bi-plus-square" />
-		  Ajouter une dépense
-        </button>
-      </form>
-    </div>
+<nav class="container-fluid flex-column flex-sm-row navbar mb-5">
+  <h1>Budget Mariage</h1>
+  <form class="d-flex">
+    <button
+      class="btn btn-outline me-2 d-flex align-items-center"
+      type="button"
+      on:click={showForm}
+    >
+      <i class="bi bi-plus-square me-2" />
+      <span>Ajouter une dépense</span>
+    </button>
+  </form>
 </nav>
+
+<style>
+  .navbar,
+  .btn {
+    color: var(--primary-color);
+  }
+  .btn {
+    border: 1px solid var(--primary-color);
+  }
+  .btn:hover {
+    color: var(--secondary-color);
+  }
+</style>

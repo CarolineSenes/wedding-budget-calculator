@@ -12,21 +12,21 @@
   const clearExpenses = getContext("clearExpenses");
 </script>
 
-<section class="container">
+<section class="expensesList container p-3">
   <Title title="Liste des dépenses" />
 
-  <ul>
+  <ul class="m-0 p-0">
     {#each expenses as expense, index (expense.id)}
       <div in:fly={{x:200, delay:index*150}} out:fly={{x:-200}} animate:flip>
         <Expense {expense} />
       </div>
     {:else}
-      <p>La liste des dépenses est actuellement vide</p>
+      <p>La liste des dépenses est actuellement vide.</p>
     {/each}
   </ul>
   <div class="text-center">
     <button
-      class="btn btn-outline-danger mt-3"
+      class="btn mt-3"
       type="button"
       on:click={clearExpenses}>Supprimer les dépenses</button
     >
@@ -34,4 +34,14 @@
 </section>
 
 <style>
+  .expensesList{
+    background-color: var(--primary-color);
+  }
+  .btn{
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+  }
+  p{
+    color: var(--white);
+  }
 </style>

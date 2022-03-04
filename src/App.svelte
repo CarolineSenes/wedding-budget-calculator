@@ -1,15 +1,11 @@
 <script>
-  import { setContext } from "svelte";
-  import { onMount, afterUpdate } from 'svelte';
+  import { setContext, onMount, afterUpdate } from 'svelte';
 
   //COMPONENTS//
   import Navbar from "./components/Navbar.svelte";
   import ExpensesList from "./components/ExpensesList.svelte";
   import Totals from "./components/Totals.svelte";
   import ExpenseForm from "./components/ExpenseForm.svelte";
-
-  //DATA//
-  //import expensesData from "./expenses";
 
   //VARIABLES//
   //on récupère tout le contenu de expenses.js dans un array "expenses"

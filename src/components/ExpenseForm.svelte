@@ -25,12 +25,12 @@
   }
 </script>
 
-<section>
+<section class="shadow ">
   <div class="modal-header">
     <Title title="Ajouter une dépense" />
     <button
       type="button"
-      class="btn-close"
+      class="btn-close rounded-circle"
       data-bs-dismiss="modal"
       aria-label="Close"
       on:click={hideForm}
@@ -52,9 +52,9 @@
     </div>
     <div class="text-center mt-4">
       {#if isEmpty}
-        <p class="form-text text-danger">Merci de compléter tous les champs.</p>
+        <p class="form-text">Merci de compléter tous les champs.</p>
       {/if}
-      <button type="submit" class="btn btn-primary" disabled={isEmpty}>
+      <button type="submit" class="btn" disabled={isEmpty}>
         {#if isEditing}
           Editer la dépense
         {:else}
@@ -67,7 +67,20 @@
 
 <style>
   section {
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: var(--primary-color);
+  }
+  label{
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+  .form-text{
+    color: var(--white);
+  }
+  .btn-close{
+    padding: 1em;
+    background-color: var(--secondary-color);
+  }
+  .btn:hover{
+    color: var(--secondary-color);
   }
 </style>

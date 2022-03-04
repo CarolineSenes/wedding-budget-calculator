@@ -7,9 +7,13 @@
 </script>
 
 <section class="container d-flex">
-  <Title title="Total des dépenses :" />
-  <div class="align-self-center mx-3 h2">{total}€</div>
+  <Title title="Total des dépenses" />
+  <div class="totals align-self-center mx-3 h2 py-1 px-3 rounded-pill">{total}€</div>
 </section>
 
 <style>
+  .totals{
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
 </style>

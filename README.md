@@ -13,6 +13,7 @@ Show/Hide ExpenseForm
 LocalStorage -> setItem, lifecycle onMount, getItem, lifecycle afterUpdate
 Transitions : toogle expense component (display/hide), add/delete expense component
 Animation : moove other expenses when add/delete a single expense
+Styling
 
 ---
 
