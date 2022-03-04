@@ -2,6 +2,8 @@
   --primary-color: #023638;
   --secondary-color: #BE93C5;
   --white: #F9F9F9;
+  --radius: 10px;
+  --bold: 700;
 }
 
 html,
@@ -17,7 +19,7 @@ body {
 
 section {
   margin-bottom: 2em;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 
 .bi {
@@ -30,7 +32,7 @@ button{
 }
 
 .btn {
-  font-weight: 700;
+  font-weight: var(--bold);
   border: 1px solid var(--primary-color);
 }
 
@@ -38,3 +40,13 @@ button{
   background-color: var(--white)
 }
 
+a{
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-radius: var(--radius);
+  padding: 0 0.5em;
+}
+a:hover{
+  font-weight: var(--bold);
+  color: var(--primary-color);
+}

@@ -15,19 +15,19 @@
   const modifiedExpense = getContext("modify");
 </script>
 
-<article class="card p-3 my-3">
+<li class="card p-3 my-3">
   <div class="d-flex flex-nowrap">
     <div class="flex-grow-1">
       <p class="d-inline h5">{expense.name}</p>
-      <button class="btn-expense" on:click={toogleAmount}
+      <button aria-label="Afficher le montant de la dépense" class="btn-expense" on:click={toogleAmount}
         ><i class="bi bi-caret-down-fill" /></button
       >
     </div>
     <div class="expense--buttons">
-      <button class="btn-expense text-center" on:click={() => modifiedExpense(expense.id)}
+      <button aria-label="Modifier la dépense" class="btn-expense text-center" on:click={() => modifiedExpense(expense.id)}
         ><i class="bi bi-pencil-fill" /></button
       >
-      <button class="btn-expense text-center" on:click={() => removeExpense(expense.id)}
+      <button aria-label="Supprimer la dépense" class="btn-expense text-center" on:click={() => removeExpense(expense.id)}
         ><i class="bi bi-trash3-fill" /></button
       >
     </div>
@@ -35,13 +35,13 @@
 
   {#if displayAmount}
     <p class="card-body fs-5" transition:slide>
-      <i class="bi bi-arrow-right-circle-fill" />{expense.amount}€
+      <i class="bi bi-arrow-right-circle-fill" alt="" />{expense.amount}€
     </p>
   {/if}
-</article>
+</li>
 
 <style>
-  article{
+  li{
     background-color: var(--white);
   }
   .bi-arrow-right-circle-fill{
