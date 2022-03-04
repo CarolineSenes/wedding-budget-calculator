@@ -6,6 +6,7 @@
 
 html,
 body {
+  height: 100%;
   color: var(--primary-color);
   background: #FFB75E;  /* fallback for old browsers */
   background: #e96443;  /* fallback for old browsers */

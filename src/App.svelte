@@ -133,7 +133,3 @@
   <ExpensesList {expenses} />
 </main>
 <Footer />
-
-
-<style>
-</style>
